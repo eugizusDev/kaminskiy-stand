@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Стенд «Каминский» — две палитры</title>
+<!--
+  The GitHub Pages front page: the stand (stand.html) twice, side by side, in
+  the two palettes the client is choosing between. Both copies are live:
+  each can be played through, and each opens full screen on its own.
+-->
+<style>
+  :root {
+    --paper: #ffd6a2;
+    --ink: #530c1a;
+    --orange: #d27533;
+    --deep: #3e0913;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    background: var(--deep);
+    color: var(--paper);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header { padding: 28px 24px 8px; text-align: center; }
+  h1 { margin: 0; font-weight: 300; font-size: 28px; letter-spacing: 0.04em; }
+  header p { margin: 8px auto 0; max-width: 760px; color: rgba(255, 214, 162, 0.75); }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 16px 40px;
+  }
+  figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  figcaption { font-size: 18px; letter-spacing: 0.03em; }
+  .swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    border-radius: 50%;
+    vertical-align: -1px;
+    border: 1px solid rgba(255, 214, 162, 0.5);
+  }
+  iframe {
+    display: block;
+    height: min(70vh, calc((100vw - 64px) * 16 / 9));
+    aspect-ratio: 9 / 16;
+    border: 0;
+    border-radius: 12px;
+    background: var(--ink);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  }
+  a.open {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--orange);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  footer { padding: 0 24px 32px; text-align: center; color: rgba(255, 214, 162, 0.6); font-size: 14px; }
+  footer code { color: var(--paper); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Стенд «Каминский» — две палитры</h1>
+  <p>Один и тот же стенд в двух цветовых решениях. Обе версии живые: можно пройти тест, открыть сайт
+    и презентацию. На стенде картинка займёт весь вертикальный экран 9:16.</p>
+</header>
+<main>
+  <figure>
+    <figcaption><span class="swatch" style="background:#ffd6a2"></span>Светлая — по новому ТЗ</figcaption>
+    <iframe src="stand.html?theme=light" title="Стенд, светлая палитра"></iframe>
+    <a class="open" href="stand.html?theme=light" target="_blank" rel="noopener">Открыть на весь экран</a>
+  </figure>
+  <figure>
+    <figcaption><span class="swatch" style="background:#530c1a"></span>Бордовая</figcaption>
+    <iframe src="stand.html?theme=dark" title="Стенд, бордовая палитра"></iframe>
+    <a class="open" href="stand.html?theme=dark" target="_blank" rel="noopener">Открыть на весь экран</a>
+  </figure>
+</main>
+<footer>
+  Для панели, которая показывает картинку горизонтально, добавьте к адресу <code>&amp;rotate=90</code>
+  (или <code>&amp;rotate=270</code>).
+</footer>
+</body>
+</html>
